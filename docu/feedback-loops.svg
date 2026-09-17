@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 920" width="1160" height="920" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" role="img" aria-label="Modelo de lazo de control: un punto de referencia fijo (invariants.md) y dos bucles de realimentacion de signo opuesto — el bucle balanceador (remediation_tracker.md) y el bucle reforzador (exceptions_log.md + examples). Ninguna excepcion puede tocar el punto de referencia fijo.">
+  <defs>
+    <marker id="ah-dark" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#3A4250"/>
+    </marker>
+    <marker id="ah-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#2B6CB0"/>
+    </marker>
+    <marker id="ah-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#2F855A"/>
+    </marker>
+  </defs>
+
+  <!-- Fondo propio: legible en READMEs claros y oscuros -->
+  <rect x="0" y="0" width="1160" height="920" rx="16" fill="#FBFCFE" stroke="#E2E8F0" stroke-width="2"/>
+
+  <!-- Titulo -->
+  <text x="580" y="58" text-anchor="middle" font-size="34" font-weight="700" fill="#1A202C">El modelo: un lazo de control que se corrige a sí mismo</text>
+  <text x="580" y="94" text-anchor="middle" font-size="20" fill="#718096">Un punto de referencia fijo + dos bucles de realimentación de signo opuesto</text>
+
+  <!-- Setpoint (rojo) -->
+  <rect x="400" y="150" width="360" height="150" rx="14" fill="#FCE9E9" stroke="#D64545" stroke-width="3"/>
+  <text x="580" y="200" text-anchor="middle" font-size="22" font-weight="700" fill="#1A202C">Punto de referencia fijo (setpoint)</text>
+  <text x="580" y="240" text-anchor="middle" font-size="17" fill="#718096">invariants.md — lo que nunca se negocia</text>
+  <text x="580" y="272" text-anchor="middle" font-size="17" fill="#718096">standards.md · 00-CONTEXT.md</text>
+
+  <!-- Setpoint -> Bucle rapido -->
+  <line x1="580" y1="300" x2="580" y2="341" stroke="#3A4250" stroke-width="2.5" marker-end="url(#ah-dark)"/>
+
+  <!-- Bucle rapido (ambar) -->
+  <rect x="340" y="345" width="480" height="185" rx="14" fill="#FEF5E0" stroke="#E0A82E" stroke-width="3"/>
+  <text x="580" y="388" text-anchor="middle" font-size="21" font-weight="700" fill="#1A202C">Bucle rápido — dentro de un solo análisis</text>
+
+  <!-- 3 subcajas -->
+  <rect x="356" y="410" width="145" height="100" rx="10" fill="#FFFFFF" stroke="#E0A82E" stroke-width="1.6"/>
+  <text x="428" y="448" text-anchor="middle" font-size="18" font-weight="700" fill="#1A202C">Observar</text>
+  <text x="428" y="478" text-anchor="middle" font-size="14" fill="#718096">recoger evidencia</text>
+
+  <rect x="508" y="410" width="145" height="100" rx="10" fill="#FFFFFF" stroke="#E0A82E" stroke-width="1.6"/>
+  <text x="580" y="448" text-anchor="middle" font-size="18" font-weight="700" fill="#1A202C">Filtrar</text>
+  <text x="580" y="478" text-anchor="middle" font-size="14" fill="#718096">qué aplica aquí</text>
+
+  <rect x="660" y="410" width="145" height="100" rx="10" fill="#FFFFFF" stroke="#E0A82E" stroke-width="1.6"/>
+  <text x="732" y="448" text-anchor="middle" font-size="18" font-weight="700" fill="#1A202C">Ejecutar</text>
+  <text x="732" y="478" text-anchor="middle" font-size="14" fill="#718096">checklist + puntuar</text>
+
+  <line x1="501" y1="460" x2="506" y2="460" stroke="#3A4250" stroke-width="2.2" marker-end="url(#ah-dark)"/>
+  <line x1="653" y1="460" x2="658" y2="460" stroke="#3A4250" stroke-width="2.2" marker-end="url(#ah-dark)"/>
+
+  <!-- Reloj lento (contenedor discontinuo morado) -->
+  <rect x="70" y="565" width="1020" height="255" rx="18" fill="none" stroke="#6B46C1" stroke-width="2.5" stroke-dasharray="10 8"/>
+  <text x="580" y="605" text-anchor="middle" font-size="20" font-weight="700" fill="#6B46C1">Reloj lento — entre análisis, a lo largo de semanas</text>
+
+  <!-- Bucle balanceador (azul) -->
+  <rect x="110" y="635" width="345" height="165" rx="14" fill="#E7EFF9" stroke="#2B6CB0" stroke-width="3"/>
+  <text x="282" y="682" text-anchor="middle" font-size="21" font-weight="700" fill="#1A202C">↻ Bucle balanceador</text>
+  <text x="282" y="712" text-anchor="middle" font-size="16" font-weight="700" fill="#2B6CB0">realimentación negativa</text>
+  <text x="282" y="742" text-anchor="middle" font-size="15" fill="#718096">remediation_tracker.md</text>
+  <text x="282" y="768" text-anchor="middle" font-size="14" fill="#718096">¿se corrigió de verdad o solo en el papel?</text>
+  <text x="282" y="788" text-anchor="middle" font-size="14" fill="#718096">da estabilidad</text>
+
+  <!-- Bucle reforzador (verde) -->
+  <rect x="705" y="635" width="345" height="165" rx="14" fill="#E6F1E9" stroke="#2F855A" stroke-width="3"/>
+  <text x="877" y="682" text-anchor="middle" font-size="21" font-weight="700" fill="#1A202C">↻ Bucle reforzador</text>
+  <text x="877" y="712" text-anchor="middle" font-size="16" font-weight="700" fill="#2F855A">realimentación positiva</text>
+  <text x="877" y="742" text-anchor="middle" font-size="15" fill="#718096">exceptions_log.md + examples/</text>
+  <text x="877" y="768" text-anchor="middle" font-size="14" fill="#718096">acumula y acelera</text>
+  <text x="877" y="788" text-anchor="middle" font-size="14" fill="#718096">amortiguador: varios casos antes de volverse regla</text>
+
+  <!-- Conexiones: solida = alimenta, discontinua = corrige el siguiente -->
+  <path d="M470 530 C 400 585, 330 590, 300 631" fill="none" stroke="#2B6CB0" stroke-width="2.5" marker-end="url(#ah-blue)"/>
+  <path d="M360 635 C 400 585, 410 560, 432 532" fill="none" stroke="#2B6CB0" stroke-width="2.2" stroke-dasharray="7 6" marker-end="url(#ah-blue)"/>
+
+  <path d="M690 530 C 760 585, 830 590, 860 631" fill="none" stroke="#2F855A" stroke-width="2.5" marker-end="url(#ah-green)"/>
+  <path d="M800 635 C 760 585, 750 560, 728 532" fill="none" stroke="#2F855A" stroke-width="2.2" stroke-dasharray="7 6" marker-end="url(#ah-green)"/>
+
+  <!-- Notas -->
+  <text x="580" y="852" text-anchor="middle" font-size="15" fill="#718096">Línea continua: cada análisis alimenta los bucles · Línea discontinua: cada bucle corrige el análisis siguiente</text>
+  <text x="580" y="882" text-anchor="middle" font-size="18" font-weight="700" fill="#1A202C">Ninguna excepción del bucle reforzador puede tocar el punto de referencia fijo</text>
+  <text x="580" y="908" text-anchor="middle" font-size="14" fill="#A0AEC0">Detalle del modelo: methodology.md · OVERVIEW.md</text>
+</svg>
