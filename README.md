@@ -1,5 +1,7 @@
 # Marco de Gobernanza de IA — v0.0
 
+![Gobernanza IA · Método — Un lazo que se corrige solo: un invariants.md que nadie puede saltarse y dos bucles (balanceador y reforzador) que aprenden de cada caso](docu/banner.png)
+
 Plantilla reutilizable para que un equipo defina cómo se usa la IA (por ejemplo, Claude Code)
 al revisar, auditar o construir proyectos, y qué reglas nunca se pueden saltar.
 
