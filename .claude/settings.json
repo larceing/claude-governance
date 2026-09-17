@@ -1,0 +1,16 @@
+{
+  "$comment": "Config de hooks de Claude Code para esta base de gobernanza. Verifica el esquema exacto contra la documentacion oficial de Claude Code de tu version, ya que puede cambiar. Este es un ejemplo funcional de partida (v0.0).",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/check-secrets.sh"
+          }
+        ]
+      }
+    ]
+  }
+}

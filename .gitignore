@@ -1,0 +1,6 @@
+# Temporales de editores
+~$*
+.~lock.*
+*.tmp
+*.swp
+.$*.bkp
