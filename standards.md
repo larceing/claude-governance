@@ -47,6 +47,27 @@ Toda auditoría devuelve:
 - **4.8 Uso de IA en desarrollo vs. producción** — `[PENDIENTE]`
 - **4.9 Traza del flujo de datos** — `[PENDIENTE]`
 - **4.10 Canal de distribución adecuado a la sensibilidad** — `[PENDIENTE]`
+- **4.11 Uso de API de IA en runtime: modelo y gasto** — aplica a cualquier artefacto que llame
+  a un modelo de IA de pago (chatbot, asistente, job que resume o clasifica).
+  - **4.11.a Lista cerrada de modelos.** Se comprueba: el código solo admite modelos aprobados en
+    `tool_status.md`. PASS: si el modelo aprobado no responde, prueba solo otro aprobado y, si no,
+    falla con un error claro. FAIL: cae en cascada a cualquier modelo disponible, o el modelo se
+    puede cambiar por configuración a uno no aprobado.
+  - **4.11.b Tope duro en el proveedor.** Se comprueba: el proyecto/cuenta del proveedor tiene
+    presupuesto mensual y alertas. PASS: presupuesto y alertas configurados, con captura o
+    confirmación de quien administra la cuenta. FAIL: sin presupuesto, o solo alertas sin límite.
+    No se puede verificar desde el código: si nadie lo confirma, cuenta como FAIL (§1).
+  - **4.11.c Tope en la aplicación.** Se comprueba: la app registra los tokens de cada llamada y
+    deja de llamar al superar el tope del mes. PASS: registro de consumo y corte con un mensaje
+    claro. FAIL: no registra consumo.
+  - **4.11.d Respuesta acotada.** Se comprueba: cada llamada fija un máximo de tokens de salida y
+    limita el historial que se reenvía. PASS: ambos límites. PARTIAL: solo uno. FAIL: ninguno.
+  - **4.11.e Clave dedicada.** Se comprueba: la clave de API es de un proyecto/cuenta usado solo
+    por este artefacto. PASS: clave propia. FAIL: reutiliza la clave de otro sistema (el gasto y
+    una fuga no se pueden aislar). La clave en sí sigue bajo el invariante 1.
+  - **Varios motores:** si el artefacto usa varios modelos según la tarea (p. ej. uno barato por
+    defecto y otro más capaz bajo demanda), cada motor se evalúa con 4.11.a y el tope de 4.11.c
+    es común a todos.
 
 ## 5. Alcance y artefacto de salida
 

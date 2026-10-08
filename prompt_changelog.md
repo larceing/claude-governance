@@ -14,3 +14,4 @@ autoridad los aprueba.
 | Fecha | Qué cambió | Caso real que lo motivó |
 |---|---|---|
 | _(fecha)_ | Creación del esqueleto v0.0. | — |
+| 2026-10-08 | Nuevo §4.11 en `standards.md`: uso de API de IA en runtime (lista cerrada de modelos, topes de gasto, respuesta acotada, clave dedicada, varios motores). Aprobado por el responsable del repositorio. | Auditoría de un asistente interno que caía en cascada a cualquier modelo disponible y no medía el gasto (ver `examples/asistente-interno_modelo-y-gasto.md`). |
